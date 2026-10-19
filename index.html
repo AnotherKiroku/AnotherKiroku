@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101713">
+  <title>Daymark — Daily hours</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Daymark home"><span class="brand-mark">d.</span><span>daymark</span></a>
+      <nav class="nav"><a class="nav-link active" href="index.html">Dashboard</a><a class="nav-link" href="settings.html">Settings <span class="gear">↗</span></a></nav>
+    </header>
+
+    <main class="main-content">
+      <section class="welcome-row">
+        <div>
+          <p class="eyebrow" id="today-label">YOUR DAY, YOUR PACE</p>
+          <h1>Make progress.<br><span class="muted-heading">Not a timetable.</span></h1>
+          <p class="intro">No fixed slots. Just show up, put in the hours, and let the work add up.</p>
+        </div>
+        <div class="date-chip"><span class="date-dot"></span><span id="date-text">Today</span></div>
+      </section>
+
+      <section class="summary-grid" aria-label="Today's summary">
+        <article class="summary-card primary-summary">
+          <div class="summary-top"><span class="summary-label">DAILY PROGRESS</span><span class="summary-icon">↗</span></div>
+          <div class="summary-number"><span id="total-done">0</span><span class="slash">/</span><span id="total-target">0</span><small>hrs</small></div>
+          <div class="progress-track"><div class="progress-fill" id="overall-progress"></div></div>
+          <div class="summary-foot"><span id="progress-caption">A fresh start.</span><span id="progress-percent">0%</span></div>
+        </article>
+        <article class="summary-card">
+          <div class="summary-top"><span class="summary-label">TASKS ON YOUR LIST</span><span class="summary-icon">▤</span></div>
+          <div class="summary-number"><span id="task-count">0</span><small>tasks</small></div>
+          <p class="summary-note" id="task-count-note">Add your first task in settings.</p>
+        </article>
+        <article class="summary-card">
+          <div class="summary-top"><span class="summary-label">TARGETS MET</span><span class="summary-icon">✓</span></div>
+          <div class="summary-number"><span id="targets-met">0</span><small>of <span id="targets-total">0</span></small></div>
+          <p class="summary-note">Tasks at or above their daily target.</p>
+        </article>
+      </section>
+
+      <section class="task-section">
+        <div class="section-heading">
+          <div><p class="eyebrow">THE WORK</p><h2>Today's tasks</h2></div>
+          <a class="text-link" href="settings.html">Manage tasks <span>↗</span></a>
+        </div>
+        <div id="task-list" class="task-list"></div>
+        <div id="empty-state" class="empty-state" hidden>
+          <div class="empty-illustration">＋</div>
+          <h3>Make room for what matters.</h3>
+          <p>Add the tasks you want to make time for, then track hours as you go.</p>
+          <a class="button button-primary" href="settings.html">Set up your tasks <span>↗</span></a>
+        </div>
+      </section>
+      <footer class="footer"><span>Small increments. Real momentum.</span><span>Your data stays in this browser.</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101713">
+  <title>Settings — Daymark</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Daymark home"><span class="brand-mark">d.</span><span>daymark</span></a>
+      <nav class="nav"><a class="nav-link" href="index.html">Dashboard</a><a class="nav-link active" href="settings.html">Settings <span class="gear">↗</span></a></nav>
+    </header>
+    <main class="main-content settings-main">
+      <section class="settings-intro">
+        <p class="eyebrow">MAKE IT YOURS</p>
+        <h1>Set your priorities.</h1>
+        <p class="intro">Choose the work that matters and how many hours you want to give it each day. You can change this whenever life changes.</p>
+      </section>
+
+      <section class="settings-layout">
+        <article class="settings-panel">
+          <div class="panel-heading"><div><p class="eyebrow">01 / ADD TO YOUR LIST</p><h2>Add a task</h2></div><span class="panel-symbol">＋</span></div>
+          <form id="add-task-form" class="add-form">
+            <label for="task-name">Task name</label>
+            <input id="task-name" name="task-name" type="text" maxlength="80" placeholder="e.g. Robotics research" required>
+            <label for="task-target">Daily target <span class="label-hint">in hours</span></label>
+            <div class="input-suffix"><input id="task-target" name="task-target" type="number" min="0.5" max="24" step="0.5" value="3" required><span>hrs / day</span></div>
+            <button class="button button-primary full-width" type="submit">Add task <span>＋</span></button>
+          </form>
+          <p class="panel-note">Targets are guides, not deadlines. Go over them if you want to.</p>
+        </article>
+
+        <article class="settings-panel list-panel">
+          <div class="panel-heading"><div><p class="eyebrow">02 / YOUR CURRENT FOCUS</p><h2>Manage tasks</h2></div><span class="task-count-pill" id="settings-task-count">0 tasks</span></div>
+          <p class="settings-description">Change a daily target or remove a task. Removing a task also removes its saved hour history from this browser.</p>
+          <div id="settings-task-list" class="settings-task-list"></div>
+          <div id="settings-empty" class="settings-empty" hidden>No tasks yet. Add one on the left to get started.</div>
+        </article>
+      </section>
+      <section class="data-panel">
+        <div><p class="eyebrow">YOUR DATA</p><h2>Stored on this device</h2><p class="settings-description">Your tasks and daily hour logs are saved in this browser. They won't automatically sync to another device or browser.</p></div>
+        <button id="export-data" class="button button-secondary" type="button">Export backup <span>↓</span></button>
+      </section>
+      <footer class="footer"><a href="index.html">← Back to dashboard</a><span>Keep the system simple. Keep moving.</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
